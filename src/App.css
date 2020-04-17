@@ -1,0 +1,43 @@
+:root {
+  --concert-blue: #5fdce3;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.concert-underline {
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+}
+
+.concert-underline::after {
+  display: inline-block;
+  content: "";
+  height: 1em;
+  width: 100%;
+  background: var(--concert-blue);
+  left: 0;
+  bottom: 0.25em;
+  position: absolute;
+  transform: skew(45deg) scale(0.9);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.concert-underline::before {
+  display: inline-block;
+  content: "";
+  height: 1em;
+  width: 100%;
+  background: yellow;
+  top: 0;
+  left: -0.25em;
+  position: absolute;
+  transform: skew(45deg) scale(0.9) translateX(-0.5em);
+  z-index: -1;
+  opacity: 0.5;
+}
