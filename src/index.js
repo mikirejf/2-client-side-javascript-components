@@ -1,12 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import BreakfastStudio from "./components/BreakfastStudio";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import "./App.css";
+import BreakfastStudio from './components/BreakfastStudio';
+import { GlobalStateProvider } from './GlobalStateProvider';
+
+import './App.css';
 
 function App() {
-  return <BreakfastStudio />;
+  return (
+    <GlobalStateProvider>
+      <BreakfastStudio />
+    </GlobalStateProvider>
+  );
 }
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 ReactDOM.render(<App />, rootElement);
